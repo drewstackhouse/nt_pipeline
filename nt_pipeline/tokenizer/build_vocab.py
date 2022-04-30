@@ -8,6 +8,8 @@ from tensorflow_text.tools.wordpiece_vocab import bert_vocab_from_dataset as ber
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--input','-i', help='input file path', required=True)
+parser.add_argument('--src','-s', help='source vocab output path', required=True)
+parser.add_argument('--tgt','-t', help='target vocab output path', required=True)
 args = parser.parse_args()
 
 tf.get_logger().setLevel('ERROR')
@@ -45,11 +47,11 @@ src_vocab = bert_vocab.bert_vocab_from_dataset(
     **bert_vocab_args
 )
 
-write_vocab_file('src_vocab.txt', src_vocab)
+write_vocab_file(f'{args.src}', src_vocab)
 
 tgt_vocab = bert_vocab.bert_vocab_from_dataset(
     train_tgt.batch(1000).prefetch(2),
     **bert_vocab_args
 )
 
-write_vocab_file('tgt_vocab.txt', tgt_vocab)
+write_vocab_file(f'{args.tgt}', tgt_vocab)
