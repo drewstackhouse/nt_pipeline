@@ -16,7 +16,7 @@ pwd = pathlib.Path.cwd()
 train_src = []
 train_tgt = []
 
-with open(f'../{args.input}','r') as infile:
+with open(f'{args.input}','r') as infile:
   for line in infile:
     src_line, tgt_line = line.split('\t')
     train_src.append(src_line)
