@@ -1,0 +1,2 @@
+tensorflow-datasets==4.0.1
+tensorflow-text==2.8.2
