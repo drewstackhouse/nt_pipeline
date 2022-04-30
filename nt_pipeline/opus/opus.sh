@@ -31,10 +31,10 @@ done
 
 
 # concat all files where path ends with _${src}_${tgt}.txt
-#cat *_$(echo $SRC)_$(echo $TGT).txt > $(echo $SRC)_$(echo $TGT).txt
+cat *_$(echo $SRC)_$(echo $TGT).txt > $(echo $SRC)_$(echo $TGT).txt
 
 # delete every file besides ${src}_${tgt}.txt
-#find -type f -not -name $(echo $SRC)_$(echo $TGT).txt -delete
+find -type f -not -name $(echo $SRC)_$(echo $TGT).txt -delete
 
 # output sentence count of combined file
-#wc -l $(echo $SRC)_$(echo $TGT).txt
+wc -l $(echo $SRC)_$(echo $TGT).txt
