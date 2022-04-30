@@ -34,7 +34,7 @@ done
 cat *_$(echo $SRC)_$(echo $TGT).txt > $(echo $SRC)_$(echo $TGT).txt
 
 # delete every file besides ${src}_${tgt}.txt
-find -type f -not -name $(echo $SRC)_$(echo $TGT).txt -delete
+rm -r *_$(echo $SRC)_$(echo $TGT).txt
 
 # output sentence count of combined file
 wc -l $(echo $SRC)_$(echo $TGT).txt
